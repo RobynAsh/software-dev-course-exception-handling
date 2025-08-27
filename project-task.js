@@ -33,7 +33,7 @@ const readlineSync = require('readline-sync');
 let animals = [];
 let fees = [];
 function addAnimal(name, fee) {
-    if (!name || fee < 0) {
+    if (!name || isNaN(fee) || fee < 0) {
         throw new Error("Invalid animal name or adoption fee!");
     }
     animals.push(name);
